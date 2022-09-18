@@ -2,63 +2,79 @@ package ru.netology.radio;
 
 public class Radio {
     public Radio(int StationCount) {
-        this.StationCount = StationCount;
+        this.stationCount = StationCount;
     }
 
     public Radio() {
-        this.StationCount = 10;
+        this.stationCount = 10;
     }
 
-    public int CurrentStation;
-    public int Volume;
-    private int StationCount;
-    private int MaxVolume = 100;
+    public int getCurrentStation() {
+        return currentStation;
+    }
+
+    public void setCurrentStation(int currentStation) {
+        this.currentStation = currentStation;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
+    }
+
+    private int currentStation;
+    private int volume;
+    private int stationCount;
+    private int maxVolume = 100;
 
     public void next() {
-        if (CurrentStation >= StationCount - 1) {
-            CurrentStation = 0;
+        if (currentStation >= stationCount - 1) {
+            currentStation = 0;
             return;
         }
-        CurrentStation += 1;
+        currentStation += 1;
     }
 
     public void prev() {
-        if (CurrentStation <= 0) {
-            CurrentStation = StationCount - 1;
+        if (currentStation <= 0) {
+            currentStation = stationCount - 1;
             return;
         }
-        CurrentStation -= 1;
+        currentStation -= 1;
     }
 
     public void SetCurrentStation(int Station) {
-        if (Station < 0 | Station > StationCount - 1) {
+        if (Station < 0 | Station > stationCount - 1) {
             return;
         }
-        CurrentStation = Station;
+        currentStation = Station;
     }
 
     public int getStationCount() {
-        return StationCount;
+        return stationCount;
     }
 
     public int getMaxVolume() {
-        return MaxVolume;
+        return maxVolume;
     }
 
     public void plus() {
-        if (Volume >= MaxVolume) {
-            Volume = MaxVolume;
+        if (volume >= maxVolume) {
+            volume = maxVolume;
             return;
         }
-        Volume += 1;
+        volume += 1;
     }
 
     public void minus() {
-        if (Volume <= 0) {
-            Volume = 0;
+        if (volume <= 0) {
+            volume = 0;
             return;
         }
-        Volume -= 1;
+        volume -= 1;
     }
 }
 
