@@ -9,6 +9,12 @@ public class Radio {
         this.stationCount = 10;
     }
 
+
+
+    private int currentStation;
+    private int volume;
+    private int stationCount;
+    private int maxVolume = 100;
     public int getCurrentStation() {
         return currentStation;
     }
@@ -16,6 +22,7 @@ public class Radio {
     public void setCurrentStation(int currentStation) {
         this.currentStation = currentStation;
     }
+
 
     public int getVolume() {
         return volume;
@@ -25,10 +32,7 @@ public class Radio {
         this.volume = volume;
     }
 
-    private int currentStation;
-    private int volume;
-    private int stationCount;
-    private int maxVolume = 100;
+
 
     public void next() {
         if (currentStation >= stationCount - 1) {
