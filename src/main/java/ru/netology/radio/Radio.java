@@ -1,6 +1,11 @@
 package ru.netology.radio;
 
 public class Radio {
+    private int currentStation;
+    private int volume;
+    private int stationCount;
+    private int maxVolume = 100;
+
     public Radio(int StationCount) {
         this.stationCount = StationCount;
     }
@@ -9,12 +14,6 @@ public class Radio {
         this.stationCount = 10;
     }
 
-
-
-    private int currentStation;
-    private int volume;
-    private int stationCount;
-    private int maxVolume = 100;
     public int getCurrentStation() {
         return currentStation;
     }
@@ -31,7 +30,6 @@ public class Radio {
     public void setVolume(int volume) {
         this.volume = volume;
     }
-
 
 
     public void next() {
